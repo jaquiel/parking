@@ -43,7 +43,7 @@ $ dotnet build
 $ dotnet run
 ```
 
-E por fim, acesse http://localhost:5000/ ou https://localhost:5001/
+E por fim, acesse http://localhost:5000/ ou https://localhost:5001/.
 
 
 
