@@ -1,0 +1,53 @@
+@page
+@model Parking.Pages.PrkDrive.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3>Movimentação - Alterar</h3>
+
+<h4>Movimentação</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ParkingDrive.Id" />
+            <div class="form-group">
+                <label asp-for="ParkingDrive.PriceTable" class="control-label">Tabela de Preços</label>
+                <select asp-for="ParkingDrive.PriceTableID" class="form-control" asp-items="@Model.PriceTableDescriptionSL">
+                    <option value="">-- Selecione uma tabela de preços --</option>
+                </select>
+                <span asp-validation-for="ParkingDrive.PriceTableID" class="text-danger" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.LicensePlate" class="control-label">Placa/Veículo</label>
+                <input asp-for="ParkingDrive.LicensePlate" class="form-control" />
+                <span asp-validation-for="ParkingDrive.LicensePlate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.ParkedAt" class="control-label">Entrada</label>
+                <input asp-for="ParkingDrive.ParkedAt" class="form-control" />
+                <span asp-validation-for="ParkingDrive.ParkedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.DisplacedAt" class="control-label">Saída</label>
+                <input asp-for="ParkingDrive.DisplacedAt" class="form-control" />
+                <span asp-validation-for="ParkingDrive.DisplacedAt" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

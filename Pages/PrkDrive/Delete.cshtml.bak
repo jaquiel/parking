@@ -1,0 +1,52 @@
+@page
+@model Parking.Pages.PrkDrive.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ParkingDrive</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingDrive.HourPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.HourPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingDrive.LicensePlate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.LicensePlate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingDrive.ParkedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.ParkedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingDrive.DisplacedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.DisplacedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ParkingDrive.FinalPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.FinalPrice)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ParkingDrive.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

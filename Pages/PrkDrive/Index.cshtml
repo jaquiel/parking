@@ -1,0 +1,54 @@
+@page
+@model Parking.Pages.PrkDrive.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Movimentação - Listagem</h3>
+
+<p>
+    <a asp-page="Create">Inserir nova movimentação</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tabela de Preços
+            </th>
+            <th>
+                Placa/Veículo
+            </th>
+            <th>
+                Entrada
+            </th>
+            <th>
+                Saída
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ParkingDrive) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PriceTable.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplacedAt)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

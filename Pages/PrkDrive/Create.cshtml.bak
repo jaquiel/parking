@@ -1,0 +1,54 @@
+@page
+@model Parking.Pages.PrkDrive.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ParkingDrive</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.HourPrice" class="control-label"></label>
+                <input asp-for="ParkingDrive.HourPrice" class="form-control" />
+                <span asp-validation-for="ParkingDrive.HourPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.LicensePlate" class="control-label"></label>
+                <input asp-for="ParkingDrive.LicensePlate" class="form-control" />
+                <span asp-validation-for="ParkingDrive.LicensePlate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.ParkedAt" class="control-label"></label>
+                <input asp-for="ParkingDrive.ParkedAt" class="form-control" />
+                <span asp-validation-for="ParkingDrive.ParkedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.DisplacedAt" class="control-label"></label>
+                <input asp-for="ParkingDrive.DisplacedAt" class="form-control" />
+                <span asp-validation-for="ParkingDrive.DisplacedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParkingDrive.FinalPrice" class="control-label"></label>
+                <input asp-for="ParkingDrive.FinalPrice" class="form-control" />
+                <span asp-validation-for="ParkingDrive.FinalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

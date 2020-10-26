@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+
+    ViewData["Title"] = "Home page";
+}
+<h3>Estacionamento</h3>
+<h1>Carro Bem Guardado</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Placa
+            </th>
+            <th>
+                Horário de Entrada
+            </th>
+            <th>
+                Horário de Saída
+            </th>
+            <th>
+                Duração
+            </th>
+            <th>
+                Tempo Cobrado (hora)
+            </th>
+            <th>
+                Preço
+            </th>
+            <th>
+                Valor a Pagar
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ParkingDriveVM)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicensePlate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParkedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplacedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimePayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HourPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem =>  item.TotalPayment)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

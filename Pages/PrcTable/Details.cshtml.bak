@@ -1,0 +1,43 @@
+@page
+@model Parking.Pages.PrcTable.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PriceTable</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.HourPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.HourPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.EntryDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.EntryDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.DepartureDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.DepartureDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.PriceTable.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

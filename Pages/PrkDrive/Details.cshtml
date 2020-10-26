@@ -1,0 +1,42 @@
+@page
+@model Parking.Pages.PrkDrive.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Movimentação - Detalhamento</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tabela de Preços
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.PriceTable.Description)
+        </dd>
+        <dt class="col-sm-2">
+            Placa/Veículo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.LicensePlate)
+        </dd>
+        <dt class="col-sm-2">
+            Entrada
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.ParkedAt)
+        </dd>
+        <dt class="col-sm-2">
+            Saída
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ParkingDrive.DisplacedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ParkingDrive.Id">Alterar</a> |
+    <a asp-page="./Index">Voltar</a>
+</div>

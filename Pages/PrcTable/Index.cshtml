@@ -1,0 +1,59 @@
+@page
+@model Parking.Pages.PrcTable.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Tabela de Preços - Listagem</h3>
+
+<p>
+    <a asp-page="Create">Inserir nova tabela</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tabela de Preços
+            </th>
+            <th>
+                Preço/Hora
+            </th>
+            <th>
+                Preço/Hora Adicional
+            </th>
+            <th>
+                Entrada
+            </th>
+            <th>
+                Saída
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PriceTable) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.HourPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ExtraHourPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.EntryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DepartureDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

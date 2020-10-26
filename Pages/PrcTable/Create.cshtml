@@ -1,0 +1,52 @@
+@page
+@model Parking.Pages.PrcTable.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3>Tabela de Preços - Cadastro</h3>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PriceTable.Description" class="control-label">Descrição</label>
+                <input asp-for="PriceTable.Description" class="form-control" />
+                <span asp-validation-for="PriceTable.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTable.HourPrice" class="control-label">Preço/Hora</label>
+                <input asp-for="PriceTable.HourPrice" class="form-control" />
+                <span asp-validation-for="PriceTable.HourPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTable.ExtraHourPrice" class="control-label">Preço/Hora Adicional</label>
+                <input asp-for="PriceTable.ExtraHourPrice" class="form-control" />
+                <span asp-validation-for="PriceTable.ExtraHourPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTable.EntryDate" class="control-label">Início/Validade</label>
+                <input asp-for="PriceTable.EntryDate" class="form-control" />
+                <span asp-validation-for="PriceTable.EntryDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PriceTable.DepartureDate" class="control-label">Fim/Validade</label>
+                <input asp-for="PriceTable.DepartureDate" class="form-control" />
+                <span asp-validation-for="PriceTable.DepartureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

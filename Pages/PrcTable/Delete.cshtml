@@ -1,0 +1,45 @@
+@page
+@model Parking.Pages.PrcTable.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Tabela de Preços - Exclusão</h3>
+
+<h3>Tem certeza que deseja excluir este Item?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PriceTable.HourPrice)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.HourPrice)
+        </dd>
+        <dt class="col-sm-2">
+            Início/Validade
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.EntryDate)
+        </dd>
+        <dt class="col-sm-2">
+            Fim/Validade
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PriceTable.DepartureDate)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="PriceTable.Id" />
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-page="./Index">Voltar</a>
+    </form>
+</div>
